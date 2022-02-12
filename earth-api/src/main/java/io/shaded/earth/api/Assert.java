@@ -20,8 +20,8 @@ final class Assert {
   static @NonNull String requireAlpha(final @NonNull String input,
       final @NonNull String message) {
 
-    // Checks the input and checks to see if all the charters are all lower
-    // case. Taken from https://stackoverflow.com/a/29836318
+    // Checks the input  to see if the input is all charters.
+    // Taken from https://stackoverflow.com/a/29836318
     if (!input.chars().allMatch(Character::isLetter)) {
       throw new IllegalArgumentException(message);
     }
