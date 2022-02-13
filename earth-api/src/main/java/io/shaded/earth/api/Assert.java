@@ -2,7 +2,6 @@ package io.shaded.earth.api;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-
 final class Assert {
 
   private Assert() {
@@ -20,7 +19,7 @@ final class Assert {
   static @NonNull String requireAlpha(final @NonNull String input,
       final @NonNull String message) {
 
-    // Checks the input  to see if the input is all charters.
+    // Checks the input  to see if the input is all characters.
     // Taken from https://stackoverflow.com/a/29836318
     if (!input.chars().allMatch(Character::isLetter)) {
       throw new IllegalArgumentException(message);
@@ -46,6 +45,4 @@ final class Assert {
 
     return input;
   }
-
-
 }
