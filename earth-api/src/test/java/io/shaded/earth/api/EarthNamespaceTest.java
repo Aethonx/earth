@@ -1,7 +1,7 @@
 package io.shaded.earth.api;
 
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,15 +13,17 @@ final class EarthNamespaceTest {
 
   @Test
   void testOnlyCharactersNamespace() {
-    assertThatThrownBy(
-        () -> EarthNamespace.of("earth123::a123##$"))
-        .hasMessage("Namespace must only contain characters.");
+    assertThrows(IllegalArgumentException.class,
+        () -> EarthNamespace.of("earth123::a123##$"),
+        "Namespace must only contain characters.");
   }
 
   @Test
   void testEmptyStringNamespace() {
-    assertThatThrownBy(() -> EarthNamespace.of(""))
-        .hasMessage("Namespace must not be empty.");
+    assertThrows(IllegalArgumentException.class,
+        () -> EarthNamespace.of(""),
+        "Namespace must not be empty."
+    );
   }
 
   @Test
