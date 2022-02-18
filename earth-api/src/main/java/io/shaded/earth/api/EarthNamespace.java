@@ -8,6 +8,8 @@ import org.checkerframework.checker.nullness.qual.NonNull;
  */
 public interface EarthNamespace {
 
+  EarthNamespace DEFAULT_NAMESPACE = EarthNamespace.of("earth");
+
   /**
    * Factory method to create a new namespace instance.
    *
