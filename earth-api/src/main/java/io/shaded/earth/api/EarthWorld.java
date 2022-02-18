@@ -5,7 +5,12 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 public interface EarthWorld {
 
-  EarthNamespace DEFAULT_NAMESPACE = EarthNamespace.of("earth");
+  /**
+   * @return Crates a new instance of a earth world builder.
+   */
+  static EarthWorld.@NonNull Builder builder() {
+    return new EarthWorldImpl.BuilderImpl();
+  }
 
   /**
    * The world is that is bound to the {@link EarthNamespace} via the format of
@@ -35,7 +40,6 @@ public interface EarthWorld {
 
     /**
      * @param namespace
-     * @return
      */
     @NonNull Builder namespace(final @NonNull EarthNamespace namespace);
 
