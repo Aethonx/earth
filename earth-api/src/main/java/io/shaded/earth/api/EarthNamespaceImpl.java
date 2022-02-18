@@ -2,7 +2,7 @@ package io.shaded.earth.api;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-final class EarthNamespaceImpl implements EarthNamespace {
+/*package-private*/ final class EarthNamespaceImpl implements EarthNamespace {
 
   private final @NonNull String namespace;
 

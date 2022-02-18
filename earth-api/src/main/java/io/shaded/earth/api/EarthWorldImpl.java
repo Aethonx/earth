@@ -4,7 +4,7 @@ import java.util.UUID;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
-final class EarthWorldImpl implements EarthWorld {
+/*package-private*/ final class EarthWorldImpl implements EarthWorld {
 
   private final @NonNull UUID id;
   private final @NonNull EarthNamespace namespace;
