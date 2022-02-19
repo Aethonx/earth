@@ -2,6 +2,7 @@ package io.shaded.earth.api.world;
 
 import io.shaded.earth.api.namespace.EarthNamespace;
 import java.util.UUID;
+import org.bukkit.generator.ChunkGenerator;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 public interface EarthWorld {
@@ -40,10 +41,27 @@ public interface EarthWorld {
   interface Builder {
 
     /**
-     * @param namespace
+     * @param namespace namespace that is attached to the world or the default
+     *                  {@link EarthNamespace#DEFAULT_NAMESPACE}.
      */
     @NonNull Builder namespace(final @NonNull EarthNamespace namespace);
 
+    /**
+     * @param template template world is used as a base world where it cannot be
+     *                 saved to the database if modified.
+     */
     @NonNull Builder template(final boolean template);
+
+    /**
+     * @param earthId the world to copy from.
+     */
+    @NonNull Builder fromWorld(final @NonNull UUID earthId);
+
+    /**
+     * @param chunkGenerator the custom generator that is to be used if world is
+     *                       not being inherited form. If empty default
+     *                       Minecraft generation will be used.
+     */
+    @NonNull Builder generator(final @NonNull ChunkGenerator chunkGenerator);
   }
 }
