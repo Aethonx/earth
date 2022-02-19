@@ -2,4 +2,4 @@ rootProject.name = "earth"
 
 includeBuild("earth-build")
 
-include("earth-api")
+include("earth-api", "earth-platform")
