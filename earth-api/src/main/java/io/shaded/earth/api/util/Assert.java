@@ -1,8 +1,8 @@
-package io.shaded.earth.api;
+package io.shaded.earth.api.util;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-final class Assert {
+public final class Assert {
 
   private Assert() {
   }
@@ -16,7 +16,7 @@ final class Assert {
    * @param message the message to attach to the {@link IllegalArgumentException}.
    * @return the input if valid.
    */
-  static @NonNull String requireAlpha(final @NonNull String input,
+  public static @NonNull String requireAlpha(final @NonNull String input,
       final @NonNull String message) {
 
     // Checks the input  to see if the input is all characters.
@@ -36,7 +36,7 @@ final class Assert {
    * @param message the message to attach to the {@link IllegalArgumentException}.
    * @return the input if valid.
    */
-  static @NonNull String requireNonEmpty(final @NonNull String input,
+  public static @NonNull String requireNonEmpty(final @NonNull String input,
       final @NonNull String message) {
 
     if (input.isEmpty()) {

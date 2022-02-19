@@ -3,6 +3,7 @@ package io.shaded.earth.api;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import io.shaded.earth.api.namespace.EarthNamespace;
 import org.junit.jupiter.api.Test;
 
 /**

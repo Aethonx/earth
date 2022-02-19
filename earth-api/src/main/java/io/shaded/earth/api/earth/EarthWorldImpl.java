@@ -1,5 +1,6 @@
-package io.shaded.earth.api;
+package io.shaded.earth.api.earth;
 
+import io.shaded.earth.api.namespace.EarthNamespace;
 import java.util.UUID;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;

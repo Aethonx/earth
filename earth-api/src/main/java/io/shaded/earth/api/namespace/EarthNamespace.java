@@ -1,5 +1,6 @@
-package io.shaded.earth.api;
+package io.shaded.earth.api.namespace;
 
+import io.shaded.earth.api.util.Assert;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
