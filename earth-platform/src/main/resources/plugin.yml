@@ -1,0 +1,4 @@
+main : io.shaded.earth.platform.EarthPlatform
+name : Earth
+version : 1.0.0-SNAPSHOT
+api-version : 1.18
