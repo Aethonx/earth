@@ -1,4 +1,4 @@
-package io.shaded.earth.api.earth;
+package io.shaded.earth.api.world;
 
 import io.shaded.earth.api.namespace.EarthNamespace;
 import java.util.UUID;
