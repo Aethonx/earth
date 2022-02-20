@@ -1,4 +1,4 @@
-main : io.shaded.earth.platform.EarthPlatform
+main : io.shaded.earth.plugin.EarthPlugin
 name : Earth
 version : 1.0.0-SNAPSHOT
 api-version : 1.18
