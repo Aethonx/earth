@@ -2,6 +2,7 @@ package io.shaded.earth.api.world;
 
 import io.shaded.earth.api.namespace.EarthNamespace;
 import java.util.UUID;
+import org.bukkit.World;
 import org.bukkit.generator.ChunkGenerator;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -53,6 +54,18 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 
     @Override
     public @NonNull Builder template(boolean template) {
+      return null;
+    }
+
+    @Override
+    public @NonNull Builder fromWorld(
+        @NonNull World world) {
+      return null;
+    }
+
+    @Override
+    public @NonNull Builder fromWorld(
+        @NonNull EarthWorld world) {
       return null;
     }
 

@@ -2,6 +2,7 @@ package io.shaded.earth.api.world;
 
 import io.shaded.earth.api.namespace.EarthNamespace;
 import java.util.UUID;
+import org.bukkit.World;
 import org.bukkit.generator.ChunkGenerator;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
@@ -51,6 +52,16 @@ public interface EarthWorld {
      *                 saved to the database if modified.
      */
     @NonNull Builder template(final boolean template);
+
+    /**
+     * @param world the world to copy from.
+     */
+    @NonNull Builder fromWorld(final @NonNull World world);
+
+    /**
+     * @param world the world to copy from.
+     */
+    @NonNull Builder fromWorld(final @NonNull EarthWorld world);
 
     /**
      * @param earthId the world to copy from.
