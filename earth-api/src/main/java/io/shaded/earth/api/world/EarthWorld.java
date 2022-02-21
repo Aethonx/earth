@@ -42,6 +42,11 @@ public interface EarthWorld {
   interface Builder {
 
     /**
+     * @return a new earth world instance.
+     */
+    @NonNull EarthWorld build();
+
+    /**
      * @param namespace namespace that is attached to the world or the default
      *                  {@link EarthNamespace#DEFAULT_NAMESPACE}.
      */

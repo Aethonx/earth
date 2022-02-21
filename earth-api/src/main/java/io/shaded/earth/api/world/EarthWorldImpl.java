@@ -47,6 +47,11 @@ import org.checkerframework.checker.nullness.qual.Nullable;
   static class BuilderImpl implements EarthWorld.Builder {
 
     @Override
+    public @NonNull EarthWorld build() {
+      return null;
+    }
+
+    @Override
     public @NonNull Builder namespace(
         @NonNull EarthNamespace namespace) {
       return null;
