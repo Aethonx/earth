@@ -6,7 +6,6 @@ import com.google.inject.Singleton;
 import io.shaded.earth.api.Earth;
 import io.shaded.earth.api.service.EarthService;
 import io.shaded.earth.plugin.compress.EarthCompressor;
-import io.shaded.earth.plugin.compress.EarthCompressor.CompressorType;
 import io.shaded.earth.plugin.service.EarthFileService;
 import io.shaded.earth.plugin.service.internal.EarthFileServiceImpl;
 import io.shaded.earth.plugin.service.internal.EarthServiceImpl;
@@ -25,7 +24,7 @@ public class EarthModule extends AbstractModule {
   }
 
   /**
-   * Default compressor is z-standard. With later releases other compression
+   * Default compressor is Zstandard. With later releases other compression
    * algorithms will be added.
    *
    * @return The implementation of the compressor that is used.
@@ -33,6 +32,6 @@ public class EarthModule extends AbstractModule {
   @Provides
   @Singleton
   public EarthCompressor compressor() {
-    return EarthCompressor.create(CompressorType.ZSTD);
+    return EarthCompressor.create(EarthCompressor.Z_STANDARD_COMPRESS_TYPE);
   }
 }
