@@ -1,4 +1,4 @@
-package io.shaded.earth.plugin.service;
+package io.shaded.earth.plugin.service.internal;
 
 import com.google.inject.Singleton;
 import io.shaded.earth.api.service.EarthService;
@@ -13,7 +13,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
  * Internal implementation of {@link EarthService}
  */
 @Singleton
-/*package-private*/ final class EarthServiceImpl implements EarthService {
+public final class EarthServiceImpl implements EarthService {
 
   @Override
   public @NonNull EarthWorld newWorld(
