@@ -5,12 +5,22 @@ import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import io.shaded.earth.api.Earth;
 import io.shaded.earth.api.service.EarthService;
+import io.shaded.earth.plugin.EarthPlugin;
 import io.shaded.earth.plugin.compress.EarthCompressor;
 import io.shaded.earth.plugin.service.EarthFileService;
 import io.shaded.earth.plugin.service.internal.EarthFileServiceImpl;
 import io.shaded.earth.plugin.service.internal.EarthServiceImpl;
+import java.io.File;
+import org.checkerframework.checker.nullness.qual.NonNull;
 
-public class EarthModule extends AbstractModule {
+public final class EarthModule extends AbstractModule {
+
+  private final @NonNull EarthPlugin plugin;
+
+  public EarthModule(
+      @NonNull EarthPlugin plugin) {
+    this.plugin = plugin;
+  }
 
   /**
    * Configures bindings of Guice.
@@ -21,6 +31,11 @@ public class EarthModule extends AbstractModule {
 
     this.bind(EarthService.class).to(EarthServiceImpl.class);
     this.bind(EarthFileService.class).to(EarthFileServiceImpl.class);
+    this.bind(EarthPlugin.class).toInstance(this.plugin);
+
+    this.bind(File.class)
+        .annotatedWith(DataDirectory.class)
+        .toInstance(this.plugin.getDataFolder());
   }
 
   /**
