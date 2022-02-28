@@ -21,6 +21,17 @@ public interface EarthWorldOptions {
    */
   @NonNull Option<GameMode> GAMEMODE = Option.valueOf("gamemode", GameMode.SURVIVAL);
 
+  /**
+   * Option if players data should or shouldn't be saved. Should primarily be
+   * used for hubs and other non inventory dependent gamemodes.
+   */
+  @NonNull Option<Boolean> SAVE_PLAYER_DATA = Option.valueOf("save_player_data", Boolean.TRUE);
+
+  /**
+   * Option if entities should be saved in the world or removed.
+   */
+  @NonNull Option<Boolean> SAVE_ENTITIES = Option.valueOf("save_entities", Boolean.TRUE);
+
   interface Builder {
 
     /**
@@ -28,6 +39,14 @@ public interface EarthWorldOptions {
      */
     @NonNull EarthWorldOptions build();
 
+    /**
+     * Allows for configuration of the worlds options.
+     *
+     * @param option Option that is being applied to the world.
+     * @param value  the value of the option of type T.
+     * @param <T>    type of the option
+     * @return the builder instance to configure more options
+     */
     @NonNull <T> Builder option(
         final @NonNull Option<T> option,
         final @NonNull T value);
