@@ -1,6 +1,7 @@
 package io.shaded.earth.api.option;
 
 import org.bukkit.GameMode;
+import org.bukkit.generator.ChunkGenerator;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
@@ -31,6 +32,11 @@ public interface EarthWorldOptions {
    * Option if entities should be saved in the world or removed.
    */
   @NonNull Option<Boolean> SAVE_ENTITIES = Option.valueOf("save_entities", Boolean.TRUE);
+
+  /**
+   * The chunk generator that the world will generate from.
+   */
+  @NonNull Option<ChunkGenerator> CHUNK_GENERATOR = Option.valueOf("chunk_generator");
 
   interface Builder {
 
