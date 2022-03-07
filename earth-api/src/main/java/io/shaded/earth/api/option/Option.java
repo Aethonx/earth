@@ -49,4 +49,12 @@ public final class Option<T> {
   public @NonNull Optional<@Nullable T> defaultValue() {
     return Optional.ofNullable(this.defaultValue);
   }
+
+  /**
+   * @param object object to be cast to.
+   * @return the object cast.
+   */
+  public @NonNull T cast(@NonNull Object object) {
+    return (T) object;
+  }
 }
